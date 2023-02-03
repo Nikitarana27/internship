@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* universal selector */
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* <!-- normal selector --> */
+p {
+
+  color: rgb(61, 49, 59);
+} 
+
+/*  id selector */
+#para2{
+    text-align: center;
+  color: rgb(25, 0, 255);
+}
+
+p.center {
+  font-size: large;
+  color: rgb(25, 0, 255);
+}
+/* class selector */
+.center {
+    text-align: center;
+    color: rgb(245, 92, 194);
+}
+
+/* border */
+p.dotted {border-style: dotted;}
+p.dashed {border-style: dashed;}
+p.solid {border-style: solid;}
+p.double {border-style: double;}
+p.groove {border-style: groove;}
+p.ridge {border-style: ridge;}
+p.inset {border-style: inset;}
+p.outset {border-style: outset;}
+p.none {border-style: none;}
+p.hidden {border-style: hidden;}
+p.mix {border-style: dotted dashed solid double;}
+
+</style>
+</head>
+<body style="background-image: url('../logo.jpg'); width:100%; height: 500px;background-repeat: no-repeat;background-position: right top;margin-right: 200px;background-attachment: fixed;">
+    
+<!-- normal selector -->
+<p>Every paragraph will be affected by the style.</p>
+<p id="para1">Me too!</p>
+<p>And me!</p>
+<hr>
+ 
+<!-- id selector -->
+<p id="para2">Hello World!</p>
+
+
+<!-- class selector -->
+<h1 class="center">Red and center-aligned heading</h1>
+<p class="center">Red and center-aligned paragraph.</p>  
+
+<!-- elector	
+Example	Example description
+#id	        #firstname	    Selects the element with id="firstname"
+.class	    .intro	        Selects all elements with class="intro"
+element.class	  p.intro	Selects only <p> elements with class="intro"
+*	         *	            Selects all elements
+element	    p	            Selects all <p> elements
+element,element,..	div, p	Selects all <div> elements and all <p> elements -->
+
+
+
+    <!--background color -->
+<h1 style="background-color:Tomato;">Tomato</h1>
+<h1 style="background-color:Orange;">Orange</h1>
+<h1 style="background-color:DodgerBlue;">DodgerBlue</h1>
+<h1 style="background-color:MediumSeaGreen;">MediumSeaGreen</h1>
+<h1 style="background-color:Gray;">Gray</h1>
+<h1 style="background-color:SlateBlue;">SlateBlue</h1>
+<h1 style="background-color:Violet;">Violet</h1>
+<h1 style="background-color:LightGray;">LightGray</h1>
+
+
+<!-- font color -->
+<h3 style="color:Tomato;">Hello World</h3>
+
+<p style="color:DodgerBlue;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+
+<p style="color:MediumSeaGreen;">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+
+<!-- border color -->
+<h1 style="border:2px solid Tomato;">Lorem ipsum dolor sit amet.</h1>
+<h1 style="border:2px solid DodgerBlue;">Lorem ipsum dolor sit.</h1>
+<h1 style="border:2px solid Violet;">Lorem ipsum dolor sit amet consectetur.</h1>
+
+<!-- with opacity -->
+<p style="background-color:hsla(9, 100%, 64%, 0.5);">bgcolor with opacity</p>
+<!--  without opacity -->
+<p style="background-color:hsla(9, 100%, 64%);">bgcolor without opacity</p>
+
+
+<!-- RGB Value
+In CSS, a color can be specified as an RGB value, using this formula:
+
+rgb(red, green, blue) 
+rgb(255, 99, 71)-->
+
+<!-- HEX Value
+In CSS, a color can be specified using a hexadecimal value in the form:
+
+#rrggbb
+Example     #ff0000 -->
+
+<!-- HSL Value
+In CSS, a color can be specified using hue, saturation, and lightness (HSL) in the form:
+hsl(hue, saturation, lightness) 
+
+hsla(hue, saturation, lightness, alpha)
+The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all)-->
+
+
+
+
+<!-- background -->
+
+
+<!-- properties 
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+background (shorthand property) -->
+
+<!-- opacity -->
+
+<div style="display: flex;">
+    <div style="width: 200px; height: 200px; background-color: green;opacity: 1;"></div>
+    <div style="width: 200px; height: 200px; background-color: green;opacity: 0.6;"></div>
+    <div style="width: 200px; height: 200px; background-color: green;opacity: 0.3;"></div>
+    <div style="width: 200px; height: 200px; background-color: green;opacity: 0.1;"></div>
+</div>
+<hr>
+<!-- background image -->
+<h1>background-image</h1>
+<div style="background-image: url('../flashstrip.jpg'); width: 100%; height: 500px;">
+</div>
+
+<hr>
+<!-- background-repeat x-->
+<h1>background-repeat-x</h1>
+<div style="background-image: url('../flashstrip.jpg'); width: 100%; height: 500px;background-repeat: repeat-x;">
+</div>
+
+<hr>
+<!-- background-repeat y-->
+<h1>background-repeat-y</h1>
+<div style="background-image: url('../flashstrip.jpg'); width: 100%; height: 500px;background-repeat: repeat-y;">
+</div>
+
+<hr>
+<!-- background-norepeat-->
+<h1>background-norepeat</h1>
+<div style="background-image: url('../flashstrip.jpg'); width:100%; height: 500px;background-repeat: no-repeat;">
+</div>
+<hr>
+
+<!-- background-position-->
+<h1>background-norepeat</h1>
+<div style="background-image: url('../flashstrip.jpg'); width:100%; height: 500px;background-repeat: no-repeat;background-position: right top;">
+</div>
+<hr>
+
+<!-- attach bgimage -->
+<!-- see in body tag -->
+
+<!-- background-size-->
+<h1>background-size</h1>
+<div style="background-image: url('../flashstrip.jpg'); width:100%; height: 500px;background-repeat: no-repeat;background-size: 100% 500px;">
+    background-size: 100% 500px;
+</div>
+<!-- background-size: auto|length|cover|contain|initial|inherit; -->
+
+
+<hr>
+
+
+
+<!-- block -->
+<h1>block</h1>
+<div style="display: flex;">
+<div style="background-color: rgb(101, 206, 241);
+border: solid black 1px;
+width: 300px;
+block-size: 200px;
+writing-mode: vertical-lr;">
+background-color: lightblue;<br>
+    border: solid black 1px;<br>
+    width: 100px;<br>
+    block-size: 200px;</div>
+    <div style="background-color: rgb(101, 206, 241);
+border: solid black 1px;
+width: 300px;
+block-size: 200px;
+writing-mode: vertical-rl;">
+background-color: lightblue;<br>
+    border: solid black 1px;<br>
+    width: 100px;<br>
+    block-size: 200px;</div>
+</div>
+<hr>
+
+
+
+
+<!-- border -->
+<h1>border</h1>
+<!-- The border-style property specifies what kind of border to display.
+
+The following values are allowed:
+
+dotted - Defines a dotted border
+dashed - Defines a dashed border
+solid - Defines a solid border
+double - Defines a double border
+groove - Defines a 3D grooved border. The effect depends on the border-color value
+ridge - Defines a 3D ridged border. The effect depends on the border-color value
+inset - Defines a 3D inset border. The effect depends on the border-color value
+outset - Defines a 3D outset border. The effect depends on the border-color value
+none - Defines no border -->
+
+<p class="dotted">A dotted border.</p>
+<p class="dashed">A dashed border.</p>
+<p class="solid">A solid border.</p>
+<p class="double">A double border.</p>
+<p class="groove">A groove border.</p>
+<p class="ridge">A ridge border.</p>
+<p class="inset">An inset border.</p>
+<p class="outset">An outset border.</p>
+<p class="none">No border.</p>
+<p class="hidden">A hidden border.</p>
+<p class="mix">A mixed border.</p>
+
+
+<!-- border-width: 5px;
+border-color: red;
+border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid; -->
+
+  <!-- shorthand property means all in one -->
+  <!-- border-width
+border-style
+border-color 
+
+
+example      border: 5px solid red-->
+
+<!--  Rounded Borders -->
+<!-- border-radius: 5px; -->
+<hr>
+
+<br><br>
+</body>
+</html>
+
+
