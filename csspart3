@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.test {
+  white-space: nowrap; 
+  width: 200px; 
+  overflow: hidden; 
+  border: 1px solid #000000;
+}
+
+div.test:hover {
+  overflow: visible;
+}
+.hr{
+    border: 1px solid black;
+}
+    </style>
+</head>
+<body>
+    <h2>Gradients</h2>
+    <!-- Linear Gradients (goes down/up/left/right/diagonally)
+Radial Gradients (defined by their center)
+Conic Gradients (rotated around a center point) -->
+<h4>linear-gradient top to down by default</h4>
+  <div style="background-color: red; background-image: linear-gradient(red, rgb(247, 10, 187));height: 200px;"></div>
+        <!-- direction is top to bo0ttom by de3fault -->
+<h4>linear-gradient left to right</h4>
+<div style="background-image: linear-gradient(to right, red , yellow);height: 200px;"></div>
+<h4>linear-gradient to bottom right</h4>
+<div style="background-image: linear-gradient(to bottom right, red , yellow);height: 200px;"></div>
+<h4>multiple colors Gradients</h4>
+<div style="background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);height: 200px;"></div>
+<h4>useing transparency</h4>
+<div style="background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));height: 200px;"></div>
+<!--
+    we can also use angles background-image: linear-gradient(angle, color-stop1, color-stop2); -->
+
+
+<!-- repeat linear gradiant -->
+<h2>repeat linear gradiant</h2>
+<div style="background-image: repeating-linear-gradient(red  , yellow 10%, green 20% );height: 200px;"></div>
+
+
+<h2>radial</h2>
+<div style="background-image: radial-gradient(blue 5%, yellow 30%, red 60%);height: 200px"> </div>
+<div style="background-image: radial-gradient(circle ,blue 5%, yellow 30%, red 60%);height: 300px;width: 300px;"> </div>
+<div style="background-image: repeating-radial-gradient(blue 5%, yellow 15%, red 20%);height: 300px;width: 300px;"> </div>
+<!--size property 
+    closest-side
+farthest-side
+closest-corner
+farthest-corner -->
+
+<!-- conic  -->
+<div style="height: 200px;
+width: 200px;
+background-color: red; /* For browsers that do not support gradients */
+background-image: conic-gradient(red, yellow, green);border-radius: 50%;"></div>
+<div style="height: 200px;
+width: 200px;
+background-color: red; /* For browsers that do not support gradients */
+background-image: conic-gradient(red, yellow, green, blue, black);border-radius: 50%;"></div>
+<div style="height: 200px;
+width: 200px;
+background-color: red; /* For browsers that do not support gradients */
+background-image: conic-gradient(red 0deg, red 90deg, yellow 90deg, yellow 180deg, green 180deg, green 270deg, blue 270deg);border-radius: 50%;"></div>
+<div style="height: 200px;
+width: 200px;
+background-color: red; /* For browsers that do not support gradients */
+background-image: repeating-conic-gradient(red 10%, yellow 20%);border-radius: 50%;"></div>
+<hr class="hr">
+<br>
+<h2>box-shadow</h2>
+<div style="display: flex; ">
+<div style="width: 200px;
+height: 200px;
+background-color: coral;
+box-shadow: 10px 10px ; margin: 20px;">default shadow color</div>
+<div style="width: 200px;
+height: 200px;
+background-color: coral;
+box-shadow: 10px 10px lightpink; margin:20px"></div>
+<div style="width: 200px;
+height: 200px;
+background-color: coral;
+box-shadow: 10px 10px 5px rgb(207, 118, 85); margin:20px">blur shadow</div>
+<div style="width: 200px;
+height: 200px;
+background-color: coral;
+box-shadow: 10px 10px 5px 20px lightblue; margin:20px">increase shadow radius</div>
+</div>
+<div style=" border: 1px solid;
+padding: 10px;
+box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;
+margin: 20px;">
+    <h2>Multiple shadows</h2>
+    <p>box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green:</p>
+  </div>
+
+
+<hr class="hr">
+  <!-- TEXT EFFECTS -->
+  <h2>text-overflow: clip:</h2>
+<p style="white-space: nowrap; 
+width: 200px; 
+border: 1px solid #000000;
+overflow: hidden;
+text-overflow: clip;">This is some long text that will not fit in the box</p>
+
+<h2>text-overflow: ellipsis:</h2>
+<p style="white-space: nowrap; 
+width: 200px; 
+border: 1px solid #000000;
+overflow: hidden;
+text-overflow: ellipsis;">This is some long text that will not fit in the box</p>
+
+<h2>visible hidden text</h2>
+<div class="test" >This is some long text that will not fit in the box</div>
+
+<h2>The word-wrap Property</h2>
+<p style="width: 11em; 
+border: 1px solid #000000;
+word-wrap: break-word;">This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
+
+<hr class="hr">
+
+<h2>2D transformation</h2>
+<!-- methods
+translate()
+rotate()
+scaleX()
+scaleY()
+scale()
+skewX()
+skewY()
+skew()
+matrix()->matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()) -->
+
+
+<!-- translate() -->
+<h4>translate()</h4>
+<!-- move from current position -->
+<div style=" width: 300px;
+height: 100px;
+background-color: rgb(108, 212, 212);
+border: 1px solid black;
+transform: translate(40px,50px);">
+    This div element is moved 50 pixels to the right, and 100 pixels down from its current position.
+    </div>
+
+<br>
+<br>
+<br>
+
+<!-- rotate() -->
+<h4>rotate()</h4>
+<br>
+<br>
+<div style=" width: 300px;
+height: 100px;
+background-color: rgb(108, 212, 212);
+border: 1px solid black;
+transform: rotate(20deg);">
+    This div element is moved 50 pixels to the right, and 100 pixels down from its current position.
+    </div>
+
+    <hr class="hr">
+    <h2>3D transformation</h2>
+<!-- tranform -->
+<!-- rotateX()
+rotateY()
+rotateZ() -->
+
+<div style="width: 300px;
+height: 100px;
+background-color: yellow;
+border: 1px solid black;">
+    This div element is rotated 150 degrees.
+    </div>
+    
+<!-- rotatEX() -->
+<h3>rotateX()</h3>
+<div style="width: 300px;
+height: 100px;
+background-color: yellow;
+border: 1px solid black; transform: rotateX(180deg);">
+    This div element is rotated 150 degrees.
+    </div>
+    
+<!-- rotatEY() -->
+<h3>rotateY()</h3>
+<div style="width: 300px;
+height: 100px;
+background-color: yellow;
+border: 1px solid black; transform: rotateY(180deg);">
+    This div element is rotated 150 degrees.
+    </div>
+
+ <!-- rotatEZ() -->
+<h3>rotateZ()</h3>   
+<div style="width: 300px;
+height: 100px;
+background-color: yellow;
+border: 1px solid black; transform: rotateZ(90deg);">
+    This div element is rotated 150 degrees.
+    </div>
+</body>
+</html> 
