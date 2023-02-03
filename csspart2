@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">                        
+</head>
+<body>
+<h1>Text</h1>
+<!-- text color -->
+<!--  color property is used to set the color of the text  -->
+<h2>color property</h2>
+<p style="color: rgb(10, 132, 238);">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto iusto optio quia non eaque numquam officiis alias doloribus excepturi vero consequatur nisi temporibus possimus dignissimos sed sequi quisquam sit eum, dolores assumenda distinctio deserunt modi molestias consectetur. Commodi, fuga aperiam?</p>
+
+
+<!-- text alignment properties -->
+<!-- text-align
+text-align-last
+direction
+unicode-bidi
+vertical-align  -->
+
+
+<hr> 
+<!-- text-align -->
+<h2>text-align</h2>
+  <p style="text-align:left;">Heading(left)</p>
+  <p style="text-align:center;">Heading(center)</p>
+  <p style="text-align:right;">Heading(right)</p>
+  <p style="text-align:justify;block-size: 200px; width: 300px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem laboriosam quos rem repudiandae quam? Natus odit distinctio saepe labore animi ex consequuntur modi placeat, magnam maiores dignissimos excepturi aliquid neque.</p>    
+  <h2>text-align-last: right:</h2>
+<p  style="text-align-last: right;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut.</p>
+
+<h2>text-align-last: center:</h2>
+<p style="text-align-last: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut.</p>
+
+<h2>text-align-last: justify:</h2>
+<p  style="text-align-last: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut.</p>
+
+<h2>text direction</h2>
+<p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, autem. Eos reprehenderit voluptatem nemo commodi ducimus id vero, dolorum ipsum!</p>
+<p style="direction: rtl;
+unicode-bidi: bidi-override;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, autem. Eos reprehenderit voluptatem nemo commodi ducimus id vero, dolorum ipsum!</p>
+
+    <!-- vertical-align: baseline;
+    vertical-align: text-top;
+    vertical-align: text-bottom;
+    vertical-align: sub;
+    vertical-align: super; -->
+
+<hr>
+<!-- text decoration -->
+<h2>text decoration</h2>
+<!-- text-decoration-line
+text-decoration-color
+text-decoration-style
+text-decoration-thickness
+text-decoration -->
+
+
+<!-- text-decoration-line -->
+<p style="text-decoration:overline;">overline</p>
+<p style="text-decoration:line-through;">line-through</p>
+<p style="text-decoration:underline;">underline</p>
+<p style="text-decoration:overline underline;">overline underline</p>
+
+<!-- text-decoration-style: dashed,dotted,wavy,double,solid -->
+
+<!-- text-decoration-color: red; -->
+<!-- text-decoration-thickness -->
+
+<!-- shorthand property of text decoration -->
+<!-- text-decoration: text-decoration-line text-decoration-color text-decoration-style text-decoration-thickness  -->
+
+
+<hr>
+
+<!-- text-transform -->
+<h2>text-transform</h2>
+<p style="text-transform: uppercase">This text is transformed to uppercase.</p>
+<p style="text-transform: lowercase">This text is transformed to lowercase.</p>
+<p style="text-transform: capitalize">This text is capitalized.</p>
+
+
+<hr>
+
+<!-- text spacing -->
+<h2>text spacing</h2>
+<!--text-indent
+letter-spacing
+line-height
+word-spacing
+white-space -->
+
+
+<!-- text-indent -->
+<!-- text-indent property is used to specify the indentation of the first line of a text -->
+<h3>text-indent</h3>
+<p style="text-indent: 50px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore quod unde maiores hic quam suscipit atque voluptatibus soluta minima labore, sit aliquid facilis beatae accusamus laborum temporibus consectetur amet? Accusantium doloribus asperiores maiores quae quos amet iusto officiis libero veritatis!</p>
+
+<!-- letter-spacing -->
+<h3>letter-spacing</h3>
+<p style="letter-spacing: 5px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto alias perferendis quidem incidunt repellendus magni earum, tempore debitis illo delectus corporis modi officia beatae. Sapiente fuga tempora nesciunt sunt maxime?</p>
+
+<!-- line-height -->
+<h3>line-height</h3>
+<p style="line-height: 0.8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, praesentium?</p>
+<p style="line-height: 1.8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, praesentium?</p>
+
+<!-- word-spacing -->
+<h3>word-spacing</h3>
+<p style="word-spacing: 10px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, expedita.</p>
+<p style="word-spacing: 5px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, expedita.</p>
+
+
+<!-- white-space: nowrap; use to rap message in one line no matter how long it is -->
+
+<hr>
+<!-- text-shadow -->
+<h2 style="text-shadow: 2px 2px;">text-shadow</h2>
+<p style="text-shadow: 2px 2px;font-size: larger;">Lorem ipsum dolor sit amet.</p>
+<p style="text-shadow: 2px 2px red;font-size: larger;">Lorem ipsum dolor sit amet.</p>
+<p style="text-shadow: 2px 2px 5px rgb(0, 26, 255);font-size: larger;">Lorem ipsum dolor sit amet.</p>
+
+<hr>
+<hr>
+<!-- fonts -->
+<h1>font tags</h1>
+<!--  font-style:  -->
+<h4> font-style</h4>
+<p style="font-style:italic;">italic</p>
+<p style="font-style:normal ;">normal</p>
+<p style="font-style:oblique ;">oblique</p>
+
+<hr>
+<!-- font-weight: -->
+<h3>font-weight</h3>
+<p style="font-weight: normal;">normal</p>
+<p style="font-weight: bold;">bold</p>
+<hr>
+<!-- font-variant -->
+<h3>font-variant</h3>
+<p style="font-variant:normal ;">normal</p>
+<p style="font-variant:small-caps ;">small-caps</p>
+<hr>
+<!-- font-size -->
+<h3>font-size</h3>
+<p style="font-size: 14px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt magnam fuga, dignissimos architecto illum omnis amet provident quia odio neque ut non ad assumenda eaque excepturi eum veniam voluptate libero.</p>
+<p style="font-size: 7px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt magnam fuga, dignissimos architecto illum omnis amet provident quia odio neque ut non ad assumenda eaque excepturi eum veniam voluptate libero.</p>
+<p style="font-size: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt magnam fuga, dignissimos architecto illum omnis amet provident quia odio neque ut non ad assumenda eaque excepturi eum veniam voluptate libero.</p>
+<hr>
+
+<!-- responsive fonts -->
+<h1 style="font-size:5vw;">Responsive Text</h1>
+
+<p style="font-size:2vw;">Resize the browser window to see how the text size scales.</p>
+
+<p style="font-size:2vw;">Use the "vw" unit when sizing the text. 10vw will set the size to 10% of the viewport width.</p>
+
+
+<h1 class="font-effect-fire" style=" font-family: 'Sofia', sans-serif;
+font-size: 30px;">Sofia on Fire</h1>
+<hr>
+<!-- short hand property -->
+<!-- font: font-style font-variant font-weight font-size/line-height font-family -->
+</body>
+</html>
+
+
