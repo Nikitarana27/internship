@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form {
+            margin-top: 10%;
+            margin-right: 20%;
+            margin-left: 20%;
+            padding: 5px;
+            border: 2px solid rgb(61, 61, 61);
+            border-radius: 10px;
+        }
+
+        .flex {
+            font-size: larger;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #paragraph {
+            border: 2px dotted black;
+            border-radius: 10px;
+            height: 300px;
+            width: 300px;
+            padding: 10px;
+        }
+
+        .textbox {
+            width: 200px;
+            height: 30px;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        .button {
+            font-size: large;
+            font-weight: bold;
+            border-radius: 5px;
+            color: rgb(24, 27, 27);
+            background-color: rgb(1, 162, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <div class="flex">
+
+            <input class="textbox" type="text" name="text" id="text">
+
+            <input type="button" value="submit" class="button" onclick="checknumber()">
+
+            <p id="paragraph"></p>
+
+        </div>
+    </div>
+<script>
+
+checknumber = () => {
+    var value = document.getElementById('text').value;
+    if(value.length == 0)
+    {
+        document.getElementById("paragraph").innerHTML="Please enter any numeric value"
+    }
+    
+    else if(isNaN(value))
+    {
+        document.getElementById("paragraph").innerHTML="Only numeric values are allowed. Please re-enter the value";
+    }
+    else 
+    {
+        document.getElementById("paragraph").innerHTML="Entered value is a numeric value";
+    }
+}
+</script>
+</body>
+
+</html>
