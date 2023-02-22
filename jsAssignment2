@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(../../blue\ stones.jfif);
+        }
+        .form {
+            margin-top: 10%;
+            margin-right: 20%;
+            margin-left: 20%;
+            padding: 5px;
+            border: 2px solid rgb(61, 61, 61);
+            border-radius: 10px;
+            background-image: url(../../yellow\ mate.jfif);
+        }
+
+        .flex {
+            font-size: larger;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #paragraph {
+            border: 2px dotted black;
+            border-radius: 10px;
+            height: 300px;
+            width: 300px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .textbox {
+            width: 200px;
+            height: 30px;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 10px;     
+        }
+
+        .button {
+            font-size: large;
+            font-weight: bold;
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+            background-color: #00b4d8;
+        }
+    </style>
+    <script >
+  // arrow function
+checknumber = () => {
+    
+  //fetching value from from
+    var value = document.getElementById('text').value;
+
+    //if null value 
+     if (value === "") {
+        document.getElementById("paragraph").innerHTML = "Please enter any numeric value";
+    }
+
+    //if not null value
+    for (let i = 0; i < value.length; i++) {
+        var char = value.charCodeAt(i);
+        //if value is int
+        if (char >= 48 && char <= 57 ) {
+            document.getElementById("paragraph").innerHTML = "Entered value is a numeric value";
+            continue ;
+        }
+        //if value is other then int
+        else{
+            document.getElementById("paragraph").innerHTML = "Only numeric values are allowed. Please re-enter the value";
+            break;
+        }
+    }
+}
+
+
+
+
+//checknumber = () => {
+    
+  //fetching value from from
+   // var value = document.getElementById('text').value;
+   // if (value == ""){
+   //     document.getElementById("paragraph").innerHTML="Please enter any numeric value";
+  //  }
+  //  else if(isFinite(value) )
+  //  {
+
+//        document.getElementById("paragraph").innerHTML="numeric value";
+  //  }
+
+  //  else 
+ //   {
+ //       document.getElementById("paragraph").innerHTML=" not numeric value";
+//
+ //   }
+//}
+    </script>
+</head>
+
+<body>
+    <div class="form">
+        <div class="flex">
+
+            <input class="textbox" type="text" name="text" id="text">
+
+            <input type="button" value="submit" class="button" onclick="checknumber()">
+
+            <p id="paragraph"></p>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
