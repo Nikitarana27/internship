@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background-image: url(../../blue\ stones.jfif);
+    }
+
+    .li {
+        list-style-type: none;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        font-size: larger;
+    }
+    li{
+        display: flex;
+        
+    }
+
+    .form {
+        margin-top: 10%;
+        margin-right: 20%;
+        margin-left: 20%;
+        padding: 5px;
+        border: 2px solid rgb(61, 61, 61);
+        border-radius: 10px;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.132), rgba(0, 0, 0, 0.132)), url(../../yellow\ mate.jfif);
+        height: 300px;
+        color: rgb(0, 0, 0);
+        padding-left: 20%;
+    }
+</style>
+
+<body>
+    <div class="li form">
+        <div>
+            <li><input type="checkbox" name="checkme" onclick="uncheck()" value="USA"><div onclick="check(id)" id="1">USA</div> <br></li>
+            <li><input type="checkbox" name="checkme" onclick="uncheck()" value="UK"><div onclick="check(id)" id="2">UK </div><br></li>
+            <li><input type="checkbox" name="checkme" onclick="uncheck()" value="India"><div onclick="check(id)" id="3">India </div><br></li>
+            <li><input type="checkbox" name="checkme" onclick="uncheck()" value="Asia Pacific"><div onclick="check(id)" id="4">Asia Pacific </div><br></li>
+            <li><input type="checkbox" name="checkme" onclick="uncheck()" value="Australia"><div onclick="check(id)" id="5">Australia </div><br></li>
+            <li><input type="checkbox" name="checkme" onclick="uncheck()" value="Middle East"><div onclick="check(id)" id="6">Middle East </div><br></li><br>
+            <li><input type="checkbox" onclick="checkAll()" name="checkall"><div onclick="checkALL(id)" id="7">Select ALL</div></li>
+        </div>
+        
+        
+    </div>
+</body>
+<script >
+
+    var checkall = document.getElementsByName("checkall")[0];
+    var checkme = document.getElementsByName("checkme");
+
+
+checkAll = () => {
+    if (checkall.checked == true) {
+        for (var i = 0; i < checkme.length; i++) {
+            checkme[i].checked = true;
+        }
+    }
+    else {
+        for (var i = 0; i < checkme.length; i++) {
+            checkme[i].checked = false;
+        }
+    }
+}
+uncheck = () => {
+    var count = 0;
+        //count of the child who are unchecked
+        for (i = 0; i < checkme.length; i++) {
+            if (checkme[i].checked == false) {
+                count++;
+            }
+        }
+        //if any one value of child node is unchecked then uncheck parent
+        if (count > 0) {
+            checkall.checked = false;
+        }
+        //if all value of child node is checked then check parent value
+        if (count == 0) {
+            checkall.checked = true;
+        }
+        
+}
+//this is for checking button if label is click
+check = (id) =>{
+    var node=document.getElementById(id);
+    if(node.parentNode.firstChild.checked == false){
+        node.parentNode.firstChild.checked = true;
+    }
+    else{
+        node.parentNode.firstChild.checked = false;
+    }
+    node.parentNode.firstChild.onclick = uncheck();
+}
+//this is for checking button if label is click
+checkALL = (id) =>{
+    var node=document.getElementById(id);
+    if(node.parentNode.firstChild.checked == false){
+        node.parentNode.firstChild.checked = true;
+    }
+    else{
+        node.parentNode.firstChild.checked = false;
+    }
+    node.parentNode.firstChild.onclick = checkAll();
+}
+
+</script>
+
+</html>
