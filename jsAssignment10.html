@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practical 10</title>
+</head>
+
+<style>
+    body {
+        background-image: url(../../blue\ stones.jfif);
+    }
+
+    .li {
+        list-style-type: none;
+        font-weight: bolder;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 30px;
+    }
+
+    .form {
+        margin-top: 10%;
+        margin-right: 20%;
+        margin-left: 20%;
+        padding: 5px;
+        border: 2px solid rgb(61, 61, 61);
+        border-radius: 10px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../../yellow\ mate.jfif);
+        height: 300px;
+        color: rgb(0, 0, 0);
+        justify-content: center;
+    }
+    .button {
+            font-size: large;
+            font-weight: bold;
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+            background-color: #1e96e1;
+        }
+</style>
+
+<body>
+    <div class="li form">
+        <p>Please click here in order to read our Terms and Conditions</p>
+        <input type="button" value="Read" onclick="popup2()" class="button">
+    </div>
+</body>
+<script >
+    popup2 = () => {
+  var window = open('./popup2.html','popup2','width=400,height=200,resizable=no,toolbar=no,location=no,left=100,top=100');
+};
+</script>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body{
+            background-image: url(../../animal.jfif);
+            background-repeat: no-repeat;
+            background-size: 300px 300px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html> -->
+</html>
