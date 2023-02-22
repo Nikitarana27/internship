@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practical 11</title>
+</head>
+
+<style>
+    body {
+        background-image: url(../../blue\ stones.jfif);
+    }
+
+    .li {
+        list-style-type: none;
+        font-weight: bolder;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .form {
+        margin-top: 10%;
+        margin-right: 20%;
+        margin-left: 20%;
+        padding: 5px;
+        border: 2px solid rgb(61, 61, 61);
+        border-radius: 10px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(../../yellow\ mate.jfif);
+        height: 300px;
+        color: rgb(0, 0, 0);
+        justify-content: center;
+    }
+
+    .button {
+        font-size: large;
+        font-weight: bold;
+        border-radius: 5px;
+        color: rgb(0, 0, 0);
+        background-color: #1e96e1;
+    }
+    #dialog_box{
+        font-size: large;
+        font-weight: bold;
+        border-radius: 10px;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <div class="li form">
+        <div> 
+            <label for="dialog_box">Please select</label>
+            </div>
+            <div >
+                <form name="select_box">
+            <select name="dialog_box" id="dialog_box" onchange="display()">
+                <option value="India"   name="box" >Please select</option>
+                <option value="India"   name="box" >India</option>
+                <option value="America" name="box" >America</option>
+                <option value="Canada"  name="box" >Canada</option>
+                <option value="China"   name="box"  >China</option>
+                <option value="Japan"   name="box"  >Japan</option>
+            </select>
+        </form>
+        </div>
+        <div style="display: flex;">
+            Your Selected Country : &nbsp; 
+            <span id="display"></span>            
+        </div>
+    </div>
+    <script >
+
+
+display = () =>{
+    var box = select_box.dialog_box;
+    // printing all values when please select is selected
+    if(box.selectedIndex == 0 ){
+        var options = "";
+        for (var i = 1; i < box.length; i++) {
+               options = options + box.options[i].value + "<br> " ;
+            }
+            document.getElementById("display").innerHTML = options;
+     }
+
+    //else only one value is selected
+     else{
+
+        document.getElementById("display").innerHTML = box[box.selectedIndex].value;
+     }
+   
+}
+
+
+    </script>
+</body>
+
+
+</html>
