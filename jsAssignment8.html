@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practical 8</title>
+</head>
+
+<style>
+    body {
+        background-image: url(../../blue\ stones.jfif);
+    }
+
+    .li {
+        list-style-type: none;
+        font-weight: bolder;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 30px;
+    }
+
+    .form {
+        margin-top: 10%;
+        margin-right: 20%;
+        margin-left: 20%;
+        padding: 5px;
+        border: 2px solid rgb(61, 61, 61);
+        border-radius: 10px;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.132), rgba(0, 0, 0, 0.132)), url(../../yellow\ mate.jfif);
+        height: 300px;
+        color: rgb(0, 0, 0);
+        justify-content: center;
+    }
+    #date{
+        width: 150px;
+        height: 30px;
+        font-size: large;
+        font-weight: bold;
+    }
+    .submit {
+            font-size: large;
+            font-weight: bold;
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+            background-color: #1e96e1;
+        }
+
+</style>
+
+<body>
+    <div class="li form">
+        <div>
+            Enter date here:
+        </div>
+        <div>
+            <input type="text" name="date" id="date">
+        </div>
+        <div>
+            <input type="button" value="submit" class="submit" onclick="valDate()">
+        </div>
+        <div>
+            <p id="msg" class="li"></p>
+        </div>
+    </div>
+</body>
+<script >
+valDate = () =>{
+    //getting value of date
+    var date=document.getElementById("date").value;
+
+    //format of date
+    let dateformat = /^\d{2}[\-]\d{2}[\-]\d{4}$/;
+
+    //checking if string is empty or not
+    if(date == ""){
+        document.getElementById("msg").innerHTML="Please enter date in MM-DD-YYYY format";
+    }
+
+    //if format matches
+    else if (date.match(dateformat)) {
+    //splitting date,month and year
+    let operator = date.split('-');
+        // Extract the string into month, date and year  and converting into int  
+        let datepart = [];
+        if (operator.length > 1) {
+            datepart = date.split('-');
+        }
+        let month = parseInt(datepart[0]);
+        let day = parseInt(datepart[1]);
+        let year = parseInt(datepart[2]);
+        
+        //vadition of month
+        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+            //validation of day
+                        if (day > 31) {
+                            //to check if the date is out of range
+                            document.getElementById("msg").innerHTML="Invalid day. Day should be within the range 1 to 31";
+                        }
+                        else{
+                            document.getElementById("msg").innerHTML="You have entered valid date. Its "+date+". Thank you.";
+                        }
+                    } 
+        //vadition of month
+        else  if (month == 4 || month == 6 || month == 9 || month == 11) {
+            //validation of day
+            if (day > 30) {
+                //to check if the date is out of range
+                document.getElementById("msg").innerHTML="Invalid day. Day should be within the range 1 to 30";
+            }
+            else{
+                document.getElementById("msg").innerHTML="You have entered valid date. Its "+date+". Thank you.";
+            }
+        }
+        //validation of feburay month according to leap year
+        else if (month == 2) {
+                            let leapYear = false;
+                            //checking leap year
+                            if ((!(year % 4) && year % 100) || !(year % 400)) 
+                            {leapYear = true;}
+                            //if not leap year but day is more then 28
+                             if ((leapYear == false) && (day >= 29)) {
+                                document.getElementById("msg").innerHTML="Invalid day. Day should be within the range 1 to 28";
+                                }
+                            //if leap year and day is more than 29
+                            else if ((leapYear == true) && (day > 29)) {
+                                        document.getElementById("msg").innerHTML="Invalid day. Day should be within the range 1 to 29";
+                                    }
+                            //valid day
+                             else{
+                                        document.getElementById("msg").innerHTML="You have entered valid date. Its "+date+". Thank you.";
+                                    }
+                                
+                            }
+        //if month is invalid
+        else{
+            document.getElementById("msg").innerHTML="Invalid month. Month should be within the range 1 to 12";
+        }
+    }
+  
+    //if format doesn't match
+    else{
+        document.getElementById("msg").innerHTML="Invalid date. Please enter date in MM-DD-YYYY format";
+    }
+  
+}
+
+
+</script>
+
+</html>
