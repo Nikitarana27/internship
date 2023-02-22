@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practical 8</title>
+</head>
+
+<style>
+    body {
+        background-image: url(../../blue\ stones.jfif);
+    }
+
+    .txt {
+        list-style-type: none;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        font-size: 25px;
+    }
+
+
+    .form {
+        margin-top: 10%;
+        margin-right: 20%;
+        margin-left: 20%;
+        padding: 5px;
+        border: 2px solid rgb(61, 61, 61);
+        border-radius: 10px;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.132), rgba(0, 0, 0, 0.132)), url(../../yellow\ mate.jfif);
+        height: 300px;
+        color: rgb(0, 0, 0);
+        justify-content: center;
+    }
+
+    #date {
+        width: 150px;
+        height: 30px;
+        font-size: large;
+        font-weight: bold;
+    }
+
+    .submit {
+        font-size: large;
+        font-weight: bold;
+        border-radius: 5px;
+        color: rgb(0, 0, 0);
+        background-color: #1e96e1;
+    }
+
+    .error {
+        font-size: small;
+        color: blue;
+    }
+</style>
+
+<body>
+    <div class="txt form">
+        <form>
+            <div style="display:flex;">
+                Please enter first number :&nbsp;
+                <input type="text" name="num1">&nbsp;
+                <span id="number1" class="error"></span>
+            </div>
+            <div style="display:flex;">
+                Please enter second number :&nbsp;
+                <input type="text" name="num2">
+                <span id="number2" class="error"></span>
+            </div>
+            <div>
+                <input type="radio" name="operator"  value="+" />Addition<br>
+                <input type="radio" name="operator"  value="-" />Subtraction<br>
+                <input type="radio" name="operator"  value="*" />Multiplication<br>
+                <input type="radio" name="operator"  value="/" />Division<br>
+                <span id="operator_msg" class="error"></span>
+            </div>
+            <div style="text-align: center;">
+                <input type="button" value="calculate" class="submit" onclick="calculate()">
+                <input type="button" value="reset" class="submit" onclick="erase()">
+            </div>
+            <div id="msg" class="li"></div>
+        </form>
+    </div>
+   
+    
+</body>
+<script >
+calculate = () => {
+
+    //getting values of numbers and operator
+    var num1 = parseInt(document.getElementsByName("num1")[0].value);
+    var num2 =  parseInt(document.getElementsByName("num2")[0].value);
+    var operator = document.getElementsByName("operator");
+    //checking empty values
+    if (num1 == "") {
+        document.getElementById('number1').innerHTML = "Please enter first number";
+    }
+    if (num2 == "") {
+        document.getElementById('number2').innerHTML = "Please enter second number";
+    }
+    //checking number
+    if (isNaN(num1)) {
+        document.getElementById('number1').innerHTML = "Please enter only numeric value for first number"
+    }
+    if (isNaN(num2)) {
+        document.getElementById('number2').innerHTML = "Please enter only numeric value for second number"
+    }
+    //checking operator is checked or not
+    var count = 0;
+    for (var j = 0; j < operator.length; j++) {
+        if (operator[j].checked == false)
+         { count++; }
+    }
+    if (count == operator.length) {
+        document.getElementById("operator_msg").innerHTML = "Please select the operation you want to perform";
+    }
+
+    //performing operation
+    else{
+        for (var i = 0; i < operator.length; i++) {
+            if (operator[i].checked == true) {
+                var operation = operator[i].value;
+            }
+        }
+    
+        if (operation == "+") {
+            document.getElementById('msg').innerHTML = num1 + num2;
+        }
+        else if (operation == "-") {
+            document.getElementById('msg').innerHTML = num1 - num2;
+        }
+        else if (operation == "*") {
+            document.getElementById('msg').innerHTML = num2 * num1;
+        }
+        else {
+            document.getElementById('msg').innerHTML = num1 / num2;
+        }
+    }
+    
+    
+}
+
+//erassing error message
+erase = () => {
+    document.getElementById('number1').innerHTML = " ";
+    document.getElementById('number2').innerHTML = " ";
+    document.getElementById('operator_msg').innerHTML = " ";
+}
+</script>
+
+</html>
