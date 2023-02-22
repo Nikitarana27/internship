@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practical6</title>
+    <style>
+        body {
+            background-image: url(../../blue\ stones.jfif);
+        }
+
+        .form {
+            margin-top: 10%;
+            margin-right: 20%;
+            margin-left: 20%;
+            padding: 5px;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            background-image: url(../../yellow\ mate.jfif);
+            height: 300px;
+        }
+
+        .flex {
+            font-size: larger;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10%;
+        }
+        .button {
+            font-size: large;
+            font-weight: bold;
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+            background-color: #00b4d8;
+        }
+    </style>
+   
+</head>
+
+<body>
+    <div class="form">
+        <div class="flex">
+            <form style="font-weight: bold;text-align: center;">
+                <div>
+                    <label for="technologies">Please click on "flowers" button for viewing flowers</label>
+                </div>
+                <br>
+                <div>
+                    <input type="button" value="flowers" class="button" onclick="flowers()">
+                </div>
+                <br>
+                <div>
+                    <label for="technologies">Please click on "animals" button for viewing animals</label>
+                </div>
+                <br>
+                <div>
+                    <input type="button" value="animals" class="button" onclick="animals()">
+                </div>
+        </div>
+
+
+        </form>
+        <!-- <p id="paragraph"></p> -->
+    </div>
+    </div>
+ <script src="practical6.js">
+animals = () =>{
+    location.href="animals.html";
+} 
+
+flowers = () =>{
+    location.href="flowers.html";
+  }
+
+    </script>
+</body>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flowers</title>
+    <style>
+        body{
+            background-image: url(../../flower.jfif);
+            background-repeat: no-repeat;
+            background-size: 400px 400px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flowers</title>
+    <style>
+        body{
+            background-image: url(../../animal.jfif);
+            background-repeat: no-repeat;
+            background-size: 300px 300px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html> -->
+</html>
