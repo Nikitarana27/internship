@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(../../blue\ stones.jfif);
+        }
+        .form {
+            margin-top: 10%;
+            margin-right: 20%;
+            margin-left: 20%;
+            padding: 5px;
+            border: 2px solid rgb(61, 61, 61);
+            border-radius: 10px;
+            background-image: url(../../yellow\ mate.jfif);
+        }
+
+        .flex {
+            font-size: larger;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #paragraph {
+            border: 2px dotted black;
+            border-radius: 10px;
+            height: 300px;
+            width: 300px;
+            padding: 10px;
+        }
+
+        .textbox {
+            width: 200px;
+            height: 30px;
+            margin: 10px;
+            border: 2px solid black;
+            border-radius: 10px;     
+        }
+
+        .button {
+            font-size: large;
+            font-weight: bold;
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+            background-color: #00b4d8;
+        }
+    </style>
+    <script >
+  checknumber = () =>{
+  //fetching value from from
+    var Fname = document.getElementById('Fname').value;
+    var Lname = document.getElementById('Lname').value;
+    //showing submitted data via alert box
+  alert("you have submitted the form \n hello!! \n "+Fname+" "+Lname);
+}
+    </script>
+</head>
+
+<body>
+    <div class="form">
+        <div class="flex">
+            <form>
+                <div>
+                    <label for= "Fname" style="font-weight: bold;">Enter First Name:</label>
+                    <input class="textbox" type="text" name="Fname" id="Fname">
+                </div>
+                <div>
+                    <label for= "Lname" style="font-weight: bold;">Enter Last Name:</label>
+                    <input class="textbox" type="text" name="Lname" id="Lname">
+                </div>
+                <div style="text-align :center;">
+                    <input type="button" value="submit" class="button" onclick="checknumber()">
+                </div>
+            </form>
+                <!-- <p id="paragraph"></p> -->    
+        </div>
+    </div>
+
+</body>
+
+</html>
