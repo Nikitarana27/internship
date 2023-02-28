@@ -37,7 +37,7 @@ export default function Add() {
                     ee = department,
                     f = skills.languages,
                     g = about;
-                console.log(f);
+                // console.log(f);
                 Employees.push({ id: uniqueId, Firstname: a, Lastname: b, Email: c, Phone: p, Gender: d, Department: ee, Skills: f, About: g });
     
                 history("/");

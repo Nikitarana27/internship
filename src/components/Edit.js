@@ -24,7 +24,7 @@ export default function Edit() {
 
    
     // let a = Employees[index];
-    var skills_check = skills.split(",");
+    // var skills_check = skills.split(",");
     // for (var i = 0; i < skills_check.length; i++) {
     //     var check=skills_check[i]
         // switch (check) {
@@ -60,48 +60,13 @@ export default function Edit() {
 
 
     const handleSubmit = (e) => {
-        // var skills_check = skills.split(",");
-        // console.log(skills_check[0]);
+
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
 
+        
             if (phone.length === 10 && isNaN(phone) === false) {
-
                 e.preventDefault();
-                // var skills_check = skills.split(",");
-                // console.log(skills_check[0]);
                 let a = Employees[index];
-
-
-                for (var i = 0; i < skills_check.length; i++) {
-                    var check=skills_check[i]
-                    switch (check) {
-                        case "Programming":
-                            document.getElementById('inlineCheckbox1').checked = true;
-                            break;
-                        case "Communication":
-                            document.getElementById('inlineCheckbox2').checked = true;
-                            break;
-                        case "Finance":
-                            document.getElementById('inlineCheckbox3').checked = true;
-                            break;
-                        case "Recruitmen":
-                            document.getElementById('inlineCheckbox4').checked = true;
-                            break;
-                        case "Optimization":
-                            document.getElementById('inlineCheckbox5').checked = true;
-                            break;
-                        case "App Development":
-                            document.getElementById('inlineCheckbox6').checked = true;
-                            break;
-                        case "Frontend Technology":
-                            document.getElementById('inlineCheckbox7').checked = true;
-                            break;
-                        case "Backend Technology":
-                            document.getElementById('inlineCheckbox8').checked = true;
-                            break;
-                    }
-                }
-            
 
                 a.Firstname = firstname;
                 a.Lastname = lastname;
