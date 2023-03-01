@@ -10,9 +10,14 @@ export default function Edit() {
     const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
-    const [gender, setGender] = useState({ genders: [] });
+    const [gender, setGender] = useState('');
     const [department, setDepartment] = useState('');
     const [skills, setSkills] = useState({ languages: [] });
+    // const s = localStorage.getItem('Skills');
+
+    // const [skills, setSkills] = useState(s);
+    const [skillarr, setSkillarr] = useState({skillArr: []})
+    // const [skillarr, setSkillarr] = useState('')
     const [id, setId] = useState('');
     const [about, setAbout] = useState('');
 
@@ -22,40 +27,40 @@ export default function Edit() {
         return e.id
     }).indexOf(id);
 
-   
+
     // let a = Employees[index];
     // var skills_check = skills.split(",");
     // for (var i = 0; i < skills_check.length; i++) {
     //     var check=skills_check[i]
-        // switch (check) {
-        //     case "Programming":
-        //         document.getElementById('inlineCheckbox1').checked = true;
-        //         break;
-        //     case "Communication":
-        //         document.getElementById('inlineCheckbox2').checked = true;
-        //         break;
-        //     case "Finance":
-        //         document.getElementById('inlineCheckbox3').checked = true;
-        //         break;
-        //     case "Recruitmen":
-        //         document.getElementById('inlineCheckbox4').checked = true;
-        //         break;
-        //     case "Optimization":
-        //         document.getElementById('inlineCheckbox5').checked = true;
-        //         break;
-        //     case "App Development":
-        //         document.getElementById('inlineCheckbox6').checked = true;
-        //         break;
-        //     case "Frontend Technology":
-        //         document.getElementById('inlineCheckbox7').checked = true;
-        //         break;
-        //     case "Backend Technology":
-        //         document.getElementById('inlineCheckbox8').checked = true;
-        //         break;
-        // }
+    // switch (check) {
+    //     case "Programming":
+    //         document.getElementById('inlineCheckbox1').checked = true;
+    //         break;
+    //     case "Communication":
+    //         document.getElementById('inlineCheckbox2').checked = true;
+    //         break;
+    //     case "Finance":
+    //         document.getElementById('inlineCheckbox3').checked = true;
+    //         break;
+    //     case "Recruitmen":
+    //         document.getElementById('inlineCheckbox4').checked = true;
+    //         break;
+    //     case "Optimization":
+    //         document.getElementById('inlineCheckbox5').checked = true;
+    //         break;
+    //     case "App Development":
+    //         document.getElementById('inlineCheckbox6').checked = true;
+    //         break;
+    //     case "Frontend Technology":
+    //         document.getElementById('inlineCheckbox7').checked = true;
+    //         break;
+    //     case "Backend Technology":
+    //         document.getElementById('inlineCheckbox8').checked = true;
+    //         break;
     // }
-    
-    
+    // }
+
+
 
 
 
@@ -63,7 +68,7 @@ export default function Edit() {
 
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
 
-        
+
             if (phone.length === 10 && isNaN(phone) === false) {
                 e.preventDefault();
                 let a = Employees[index];
@@ -74,11 +79,13 @@ export default function Edit() {
                 a.Phone = phone;
                 a.Department = department;
                 a.About = about;
+                a.Gender = gender;
+                
+                // setSkills(localStorage.setItem(skills));
+                a.Skills = skillarr.skillArr;
+                // a.Skills = skills.languages;
+                console.log(skills.languages);
                 history("/");
-                a.Gender = gender.genders[0];
-                // a.Skills = onload(checkme);
-                // var n = skills.languages.length
-                // a.Skills = skills.languages[n];
 
 
                 alert("You have successfully added the data");
@@ -104,50 +111,67 @@ export default function Edit() {
         setGender(localStorage.getItem('Gender'));
         setDepartment(localStorage.getItem('Department'));
         setSkills(localStorage.getItem('Skills'));
+        setSkills(localStorage.getItem('Skills'));
         setAbout(localStorage.getItem('About'));
         setId(localStorage.getItem('id'));
-        console.log(skills.languages);
 
 
     }, []);
 
     const handleOnChange = (event) => {
-        const { value, checked } = event.target;
-        const { genders } = gender;
-
-        if (checked) {
-            setGender({
-                genders: [value]
-            });
-        }
-        else {
-            setGender({
-                genders: genders.filter((e) => e !== value)
-            });
-        }
+        setGender(event.target.value);
+        console.log(event.target.value);
     }
 
     const handleChange = (e) => {
+
         // Destructuring
         const { value, checked } = e.target;
-        const { languages } = skills;
-
-
-        // Case 1 : The user checks the box
+        const { skillArr } = skillarr;
         if (checked) {
-            setSkills({
-                languages: [...languages, value]
+            setSkillarr({
+                // languages: [...languages, value]
+                skillArr: [...skillArr, value]
+
             });
+            // console.log(languages);
         }
         else {
-            setSkills({
-                languages: languages.filter((e) => e !== value)
+            setSkillarr({
+                skillArr: skillArr.filter((e) => e !== value)
             });
         }
     };
+    // const handleChange = (event) => { 
+    //     const{ value , checked } = event.target;
+    //     const array = [];
+    //     if(checked){
+    //         setSkillarr({
+    //             array: [...array, value]
+    //         })
+    //     }
+    //     // setSkillarr(array);
+    //     console.log(array)
+    //     console.log(skillarr);
+    // }
+    // const handleChange = (e) => {
+    //     // Destructuring
+    //     const { value, checked } = e.target;
+    //     const { languages } = skills;
 
 
-
+    //     // Case 1 : The user checks the box
+    //     if (checked) {
+    //         setSkills({
+    //             languages: [...languages,value]
+    //         });
+    //     }
+    //     else {
+    //         setSkills({
+    //             languages: languages.filter((e) => e !== value)
+    //         });
+    //     }
+    // };
     return (
         <div>
             <Form className="" style={{ margin: "5rem" }}>
@@ -170,9 +194,15 @@ export default function Edit() {
                 <Form.Group className="mb-1 " controlId="formGender" >
                     <label for="gender" className="form-label fw-bold">Gender &nbsp;</label><br></br>
                     <div className="border rounded p-2">
-                        <input type="radio" value="male" name="gender" placeholder="male" checked={gender === "male"} onChange={handleOnChange}></input>
+                        <input type="radio" value="male" id="male" name="gender" placeholder="male" checked={gender === "male"} onChange={handleOnChange}></input>
                         <label class="form-check-label" for="male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="radio" value="female" name="gender" placeholder="female" checked={gender === "female"} onChange={handleOnChange}></input>
+                        <input
+                            type="radio" id="female"
+                            value="female"
+                            name="gender"
+                            placeholder="female"
+                            checked={gender === "female"}
+                            onChange={handleOnChange}></input>
                         <label class="form-check-label" for="female">Female</label>
                     </div>
                 </Form.Group>
@@ -193,40 +223,97 @@ export default function Edit() {
                         <label for="inputCity" className="form-label fw-bold">Skills</label>
                         <div className='form-control'>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="skills" onChange={handleChange} value="Programming" />
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="inlineCheckbox2"
+                                    name="skillarr"
+                                    onChange={handleChange}
+                                    defaultChecked={localStorage.getItem('Skills').includes("Programming")}
+                                    value="Programming" />
                                 <label class="form-check-label" for="inlineCheckbox1">Programming</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="skills" onChange={handleChange} value="Communication" />
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="inlineCheckbox2"
+                                    name="skillarr"
+                                    onChange={handleChange}
+                                    defaultChecked={localStorage.getItem('Skills').includes("Communication")}
+                                    value="Communication" />
                                 <label class="form-check-label" for="inlineCheckbox2">Communication</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="skills" onChange={handleChange} value="Finance" />
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="inlineCheckbox3"
+                                    name="skillarr"
+                                    onChange={handleChange}
+                                    defaultChecked={localStorage.getItem('Skills').includes("Finance")}
+                                    value="Finance" />
                                 <label class="form-check-label" for="inlineCheckbox3">Finance</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" name="skills" onChange={handleChange} value="Recruitment" />
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="inlineCheckbox4"
+                                    name="skillarr"
+                                    onChange={handleChange}
+                                    defaultChecked={localStorage.getItem('Skills').includes("Recruitment")}
+                                    value="Recruitment" />
                                 <label class="form-check-label" for="inlineCheckbox3">Recruitment</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" name="skills" onChange={handleChange} value="Optimization" />
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="inlineCheckbox5"
+                                    name="skillarr"
+                                    onChange={handleChange}
+                                    defaultChecked={localStorage.getItem('Skills').includes("Optimization")}
+                                    value="Optimization" />
                                 <label class="form-check-label" for="inlineCheckbox3">Optimization</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox6" name="skills" onChange={handleChange} value="App Development" />
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="inlineCheckbox6"
+                                    name="skillarr" onChange={handleChange}
+                                    defaultChecked={localStorage.getItem('Skills').includes("App Development")}
+                                    value="App Development" />
                                 <label class="form-check-label" for="inlineCheckbox3">App Development</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox7" name="skills" onChange={handleChange} value="Frontend Technology" />
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="inlineCheckbox7"
+                                    name="skillarr"
+                                    onChange={handleChange}
+                                    defaultChecked={localStorage.getItem('Skills').includes("Frontend Technology")}
+                                    value="Frontend Technology" />
                                 <label class="form-check-label" for="inlineCheckbox3">Frontend Technology</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox8" name="skills" onChange={handleChange} value="Backend Technology" />
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="inlineCheckbox8"
+                                    name="skillarr"
+                                    onChange={handleChange}
+                                    defaultChecked={localStorage.getItem('Skills').includes("Backend Technology")}
+                                    value="Backend Technology" />
                                 <label class="form-check-label" for="inlineCheckbox3">Backend Technology</label>
                             </div>
                         </div>
                     </div>
                 </Form.Group>
+
+
                 <Form.Group className="mb-1" controlId="formAbout">
                     <label for="about" className="form-label fw-bold">About</label>
                     <Form.Control type="text" placeholder="Enter about" required value={about} onChange={(e) => setAbout(e.target.value)}></Form.Control>

@@ -10,7 +10,7 @@ export default function Add() {
     const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
-    const [gender, setGender] = useState({ genders: [] });
+    const [gender, setGender] = useState('');
     const [department, setDepartment] = useState('');
     const [skills, setSkills] = useState({ languages: [] });
     const [about, setAbout] = useState('');
@@ -54,19 +54,8 @@ export default function Add() {
     }
 
     const handleOnChange = (event) => {
-        const { value, checked } = event.target;
-        const { genders } = gender;
-
-        if (checked) {
-            setGender({
-                genders: [value]
-            });
-        }
-        else {
-            setGender({
-                genders: genders.filter((e) => e !== value)
-            });
-        }
+        setGender(event.target.value);
+        console.log(event.target.value);
     }
 
     const handleChange = (e) => {
@@ -78,7 +67,7 @@ export default function Add() {
         // Case 1 : The user checks the box
         if (checked) {
             setSkills({
-                languages: [...languages,"," ,value]
+                languages: [...languages,value]
             });
         }
         else {

@@ -1,12 +1,27 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Button, Table } from 'react-bootstrap';
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import Employees from './Empolyees';
 import { Link, useNavigate } from 'react-router-dom';
+import ReactPaginate from 'react-paginate';
+
 
 export default function Home() {
 
+    //for pagination
+    const [itemOffset, setItemOffset] = useState(0);
+    let itemsPerPage = 5;
+    const endOffset = itemOffset + itemsPerPage;
+    const currentItems = Employees.slice(itemOffset, endOffset);
+    const pageCount = Math.ceil(Employees.length / itemsPerPage);
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % Employees.length;
+        setItemOffset(newOffset);
+    };
+
+
+    //for navigation
     let history = useNavigate();
 
     const handleDelete = (id) => {
@@ -18,16 +33,16 @@ export default function Home() {
         history('/');
     }
 
-    const handleEdit = (id , firstname ,lastname , email ,phone, gender , department , skills, about) =>{
-        localStorage.setItem('id',id);
-        localStorage.setItem('Firstname',firstname);
-        localStorage.setItem('Lastname',lastname);
-        localStorage.setItem('Email',email);
-        localStorage.setItem('Phone',phone);
-        localStorage.setItem('Gender',gender);
-        localStorage.setItem('Department',department);
-        localStorage.setItem('Skills',skills);
-        localStorage.setItem('About',about);
+    const handleEdit = (id, firstname, lastname, email, phone, gender, department, skills, about) => {
+        localStorage.setItem('id', id);
+        localStorage.setItem('Firstname', firstname);
+        localStorage.setItem('Lastname', lastname);
+        localStorage.setItem('Email', email);
+        localStorage.setItem('Phone', phone);
+        localStorage.setItem('Gender', gender);
+        localStorage.setItem('Department', department);
+        localStorage.setItem('Skills', skills);
+        localStorage.setItem('About', about);
     }
 
     return (
@@ -53,7 +68,7 @@ export default function Home() {
 
                                 Employees && Employees.length > 0
                                     ?
-                                    Employees.map((item) => {
+                                    currentItems.map((item) => {
                                         return (
                                             <tr>
                                                 <td>{item.Firstname}</td>
@@ -67,7 +82,7 @@ export default function Home() {
 
                                                 <td>
                                                     <Link to={`/edit`}>
-                                                        <Button onClick={() => handleEdit(item.id , item.Firstname , item.Lastname , item.Email ,item.Phone, item.Gender, item.Department , item.Skills, item.About)} className="btn-success">Edit</Button>
+                                                        <Button onClick={() => handleEdit(item.id, item.Firstname, item.Lastname, item.Email, item.Phone, item.Gender, item.Department, item.Skills, item.About)} className="btn-success">Edit</Button>
                                                     </Link>&nbsp;&nbsp;
                                                     <Button onClick={() => handleDelete(item.id)} className=" btn-danger ">Delete</Button>
                                                 </td>
@@ -79,14 +94,43 @@ export default function Home() {
                             }
                         </tbody>
                     </Table>
-                    <br></br>
-                    
+                    {/* for pagination */}
 
-                    <Link className='d-grid gap-2' to="/create" style={{textDecoration: "none"}}>
-                        <Button size='lg' >Add Employee</Button>
-                    </Link>
+                    {/* <ReactPaginate className="pagination border border-gray justify-content-center p-3" */}
+
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+
+                        <ReactPaginate
+                            breakLabel="..."
+                            nextLabel="next >"
+                            onPageChange={handlePageClick}
+                            pageRangeDisplayed={5}
+                            pageCount={pageCount}
+                            previousLabel="< previous"
+                            renderOnZeroPageCount={null}
+                            containerClassName={"pagination"}
+                            breakClassName={"page-item"}
+                            breakLinkClassName={"page-link"}
+                            pageClassName={"page-item"}
+                            pageLinkClassName={'page-link'}
+                            previousClassName={'page-item'}
+                            previousLinkClassName={'page-link'}
+                            nextClassName={'page-item'}
+                            nextLinkClassName={'page-link'}
+                            activeLinkClassName={'active'}
+                        />
                     </div>
-                
+
+
+
+
+                    <div className='btn'>
+
+                        <Link className='d-grid gap-2' to="/create" style={{ textDecoration: "none" }}>
+                            <Button size='lg' >Add Employee</Button>
+                        </Link>
+                    </div>
+                </div>
             </Fragment>
         </div>
     )

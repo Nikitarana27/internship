@@ -8,7 +8,7 @@ const Employees = [
         "Phone": "1466526",
         "Gender":"male",
         "Department": "PHP",
-        "Skills": "App Development",
+        "Skills": ["Finance"],
         "About":"i am developer"
     },
     {
@@ -19,7 +19,7 @@ const Employees = [
         "Phone": "146652526",
         "Gender":"female",
         "Department": "PHP",
-        "Skills": "App Development",
+        "Skills": ["Finance"],
         "About":"i am developer"
     },
     {
@@ -30,7 +30,7 @@ const Employees = [
         "Phone": "5741466526",
         "Gender":"male",
         "Department": "node",
-        "Skills": "App Development",
+        "Skills": ["Finance"],
         "About":"i am developer"
     },
     {
@@ -41,9 +41,64 @@ const Employees = [
         "Phone": "14664526",
         "Gender":"female",
         "Department": ".Net",
-        "Skills": "frontend",
+        "Skills": ["Finance"],
         "About":"i am developer"
     },
+    {
+        "id": "5",
+        "Firstname": "prarathana",
+        "Lastname": "xSAFCXZyz",
+        "Email": "prarthana@gmail.com",
+        "Phone": "1466452226",
+        "Gender":"female",
+        "Department": ".Net",
+        "Skills":["Finance"],
+        "About":"i am developer"
+    },
+    {
+        "id": "5",
+        "Firstname": " roham",
+        "Lastname": "xSAFCXZyz",
+        "Email": "roham@gmail.com",
+        "Phone": "1466654526",
+        "Gender":"male",
+        "Department": ".Net",
+        "Skills": ["Finance"],
+        "About":"i am developer"
+    },
+    {
+        "id": "6",
+        "Firstname": "rishika",
+        "Lastname": "kamle",
+        "Email": "rishika@gmail.com",
+        "Phone": "1466452652",
+        "Gender":"female",
+        "Department": "account",
+        "Skills": ["Finance"],  
+        "About":"i am developer"
+    },
+    {
+        "id": "7",
+        "Firstname": "rita",
+        "Lastname": "xSAFCXZyz",
+        "Email": "rita@gmail.com",
+        "Phone": "1466524526",
+        "Gender":"female",
+        "Department": ".Net",
+        "Skills": ["Finance","Backend Technology"],
+        "About":"i am developer"
+    },
+    {
+        "id": "8",
+        "Firstname": "ramesh",
+        "Lastname": "xSAFCXZyz",
+        "Email": "ramesh@gmail.com",
+        "Phone": "1466452526",
+        "Gender":"male",
+        "Department": ".Net",
+        "Skills": ["Finance","Optimization"],
+        "About":"i am developer"
+    }
 ]
 
 export default Employees;
