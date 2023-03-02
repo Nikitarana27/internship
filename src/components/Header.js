@@ -23,10 +23,6 @@ const [input,setInput]=useState(" ");
       <nav className="navbar bg-dark" >
         <div className="container-fluid" >
           <a href="\" className="navbar-brand" style={{color: "white"}}>Employee Details</a>
-          <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" value={input} placeholder="Search" aria-label="Search" onChange={(e)=>setInput(e.target.value)}/>
-              <button className="btn btn-outline-success" type="submit" >Search</button>
-          </form>
         </div>
       </nav>
     </div>

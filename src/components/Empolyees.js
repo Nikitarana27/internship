@@ -3,68 +3,68 @@ const Employees = [
     {
         "id": "1",
         "Firstname": "rohan",
-        "Lastname": "xyJGHMz",
-        "Email": "abcyz@gmail.com",
-        "Phone": "1466526",
+        "Lastname": "shah",
+        "Email": "rohan@gmail.com",
+        "Phone": "1466525269",
         "Gender":"male",
         "Department": "PHP",
-        "Skills": ["Finance"],
-        "About":"i am developer"
+        "Skills": ["Programming"],
+        "About":"i am Programmer"
     },
     {
         "id": "2",
         "Firstname": "soham",
-        "Lastname": "xyJGHz",
-        "Email": "abcyzFJ@gmail.com",
-        "Phone": "146652526",
-        "Gender":"female",
+        "Lastname": "gamit",
+        "Email": "soham@gmail.com",
+        "Phone": "1466525269",
+        "Gender":"male",
         "Department": "PHP",
-        "Skills": ["Finance"],
+        "Skills": ["App Development","Backend Technology"],
         "About":"i am developer"
     },
     {
         "id": "3",
         "Firstname": "nilam",
-        "Lastname": "xyKz",
-        "Email": "abcyz@gmail.com",
+        "Lastname": "paritosh",
+        "Email": "nilam@gmail.com",
         "Phone": "5741466526",
-        "Gender":"male",
-        "Department": "node",
-        "Skills": ["Finance"],
-        "About":"i am developer"
+        "Gender":"female",
+        "Department": "account",
+        "Skills": ["Finance","Optimization"],
+        "About":"i am accountant"
     },
     {
         "id": "4",
         "Firstname": "romit",
         "Lastname": "xSAFCXZyz",
         "Email": "abcyfz@gmail.com",
-        "Phone": "14664526",
-        "Gender":"female",
+        "Phone": "1466525269",
+        "Gender":"male",
         "Department": ".Net",
-        "Skills": ["Finance"],
+        "Skills": ["Backend Technology"],
         "About":"i am developer"
     },
     {
         "id": "5",
-        "Firstname": "prarathana",
-        "Lastname": "xSAFCXZyz",
+        "Firstname": "prarthana",
+        "Lastname": "kariya",
         "Email": "prarthana@gmail.com",
         "Phone": "1466452226",
         "Gender":"female",
         "Department": ".Net",
-        "Skills":["Finance"],
+        "Skills":["Backend Technology","Frontend Technology"],
         "About":"i am developer"
     },
     {
         "id": "5",
-        "Firstname": " roham",
-        "Lastname": "xSAFCXZyz",
-        "Email": "roham@gmail.com",
+        "Firstname": "kashmira",
+        "Lastname": "rana",
+        "Email": "kashmira@gmail.com",
         "Phone": "1466654526",
-        "Gender":"male",
-        "Department": ".Net",
-        "Skills": ["Finance"],
-        "About":"i am developer"
+        "Gender":"female",
+        "Department": "Admin/HR",
+        "Skills": ["Communication","Recruitment"],
+        "About":"i am Admin/HR"
     },
     {
         "id": "6",
@@ -73,8 +73,8 @@ const Employees = [
         "Email": "rishika@gmail.com",
         "Phone": "1466452652",
         "Gender":"female",
-        "Department": "account",
-        "Skills": ["Finance"],  
+        "Department": "Moblie",
+        "Skills": ["App Development","Backend Technology","Frontend Technology","Communication"],  
         "About":"i am developer"
     },
     {
@@ -85,7 +85,7 @@ const Employees = [
         "Phone": "1466524526",
         "Gender":"female",
         "Department": ".Net",
-        "Skills": ["Finance","Backend Technology"],
+        "Skills": ["Backend Technology"],
         "About":"i am developer"
     },
     {
@@ -96,7 +96,7 @@ const Employees = [
         "Phone": "1466452526",
         "Gender":"male",
         "Department": ".Net",
-        "Skills": ["Finance","Optimization"],
+        "Skills": ["Optimization"],
         "About":"i am developer"
     }
 ]
